@@ -1,6 +1,8 @@
 'use strict';
 
+const hub = require('./hub');
 const fs = require('fs');
+require('./logger');
 
 const alterFile = (file) => {
   fs.readFile( file, (err, data) => {
@@ -8,13 +10,13 @@ const alterFile = (file) => {
     let text = data.toString().toUpperCase();
     fs.writeFile( file, Buffer.from(text), (err, data) => {
       if(err) { throw err; }
-      console.log(`${file} saved`);
+      hub.emit('saved', file);
     });
   });
 };
 
-alterFile = file => 
-  readFile(file).then(toUpper).then(write);
+// alterFile = file => 
+//   readFile(file).then(toUpper).then(write);
 
 let file = process.argv.slice(2).shift();
 alterFile(file);

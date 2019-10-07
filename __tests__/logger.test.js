@@ -1,6 +1,6 @@
 'use strict';
 
-require('../__mocks__/logger');
+require('../logger');
 const hub = require('../hub');
 
 describe('Logger testing', () => {
@@ -15,27 +15,13 @@ describe('Logger testing', () => {
   describe('On save', () => {
     it('logs and emits the new payload', () => {
       // Arrange
-      let payload = { name: 'Jon' };
+      let file = hub.js;
 
       // Act
-      hub.emit('save', payload);
+      hub.emit('saved', file);
 
       // Assert
-      expect(console.log).toHaveBeenCalledWith('Record Jon has been saved');
-      expect(hub.emit).toHaveBeenCalledWith('cache-invalidate', payload);
-    });
-  });
-
-  describe('On update', () => {
-    it('logs the updated payload', () => {
-      // Arrange
-      let payload = {};
-
-      // Act
-      hub.emit('update', payload);
-
-      // Assert
-      expect(console.log).toHaveBeenCalledWith('update', payload);
+      expect(console.log).toHaveBeenCalledWith(`${file} was saved!`);
     });
   });
 });
