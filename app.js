@@ -2,16 +2,14 @@
 
 const hub = require('./hub');
 const fs = require('fs');
+const writeFile = require('./writeFile');
 require('./logger');
 
 const alterFile = (file) => {
   fs.readFile( file, (err, data) => {
     if(err) { throw err; }
     let text = data.toString().toUpperCase();
-    fs.writeFile( file, Buffer.from(text), (err, data) => {
-      if(err) { throw err; }
-      hub.emit('saved', file);
-    });
+    hub.emit('write', writeFile(file, text));
   });
 };
 
