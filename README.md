@@ -5,42 +5,14 @@
 ### Author: Student/Group Name
 
 ### Links and Resources
-* [submission PR](http://xyz.com)
-* [travis](http://xyz.com)
-* [back-end](http://xyz.com) (when applicable)
-* [front-end](http://xyz.com) (when applicable)
-
-#### Documentation
-* [api docs](http://xyz.com) (API servers)
-* [jsdoc](http://xyz.com) (Server assignments)
-* [styleguide](http://xyz.com) (React assignments)
-
-### Modules
-#### `modulename.js`
-##### Exported Values and Methods
-
-###### `foo(thing) -> string`
-Usage Notes or examples
-
-###### `bar(array) -> array`
-Usage Notes or examples
+* [submission PR](https://github.com/DeltaV401/401-lab-17/pull/1)
+* [travis](https://travis-ci.com/DeltaV401/401-lab-17/builds/131031374)
 
 ### Setup
 #### `.env` requirements
-* `PORT` - Port Number
-* `MONGODB_URI` - URL to the running mongo instance/db
+* `PORT` - 3000
 
 #### Running the app
-* `npm start`
-* Endpoint: `/foo/bar/`
-  * Returns a JSON object with abc in it.
-* Endpoint: `/bing/zing/`
-  * Returns a JSON object with xyz in it.
-  
-#### Tests
-* How do you run tests?
-* What assertions were made?
-* What assertions need to be / should be made?
-
-#### UML
-Link to an image of the UML for your application and response to events
+* `nodemon server/server.js` - First step to test the server is working.
+* `nodemon logger/index.js` - Turn on your index to "login" as another id to your server.
+* Either `nodemon events/app.js <file to alter here>` or `telnet localhost 3000` - Listens to the server and saves the changed file.
