@@ -6,6 +6,7 @@ const readFile = require('./readFile');
 const toUpper = require('./toUpper');
 const writeFile = require('./writeFile');
 require('./logger');
+require('./network-logger');
 
 const alterFile = (file) => {
   return readFile(file)
