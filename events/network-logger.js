@@ -6,8 +6,8 @@ const LOGGER_PORT = process.env.LOGGER_PORT || 3000;
 const LOGGER_HOST = process.env.LOGGER_HOST || 'localhost';
 
 client.connect(LOGGER_PORT, LOGGER_HOST, initializeLogger);
-client.on('error', () => {
-  console.error('Connection has failed, so you have failed.');
+client.on('error', (err) => {
+  console.error('Connection has failed, so you have failed.', err);
 });
 
 function initializeLogger() {
