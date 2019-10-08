@@ -1,8 +1,8 @@
-# LAB - 
+# LAB 17
 
-## Project Name
+## TCP Server/Message Application
 
-### Author: Student/Group Name
+### Jon Struve
 
 ### Links and Resources
 * [submission PR](https://github.com/DeltaV401/401-lab-17/pull/1)
