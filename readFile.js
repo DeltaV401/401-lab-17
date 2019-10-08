@@ -1,14 +1,13 @@
-// 'use strict';
+'use strict';
 
-// const fs = require('fs');
-// const hub = require('./hub');
-// const file = require('./app');
-// const promisify = require('./util/promisify');
+const fs = require('fs');
+const promisify = require('./util/promisify');
 
-// const readFile = promisify(fs.readFile);
+const readFile = promisify(fs.readFile);
 
-// function fileReader(file) {
-//   return readFile(file).then(hub.emit('write', file));
-// }
+function fileReader(file) {
+  return readFile(file)
+    .then(buffer => buffer.toString());
+}
 
-// hub.on('read', fileReader);
+module.exports = fileReader;
